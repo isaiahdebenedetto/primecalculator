@@ -1,0 +1,7 @@
+C:\Users\deben\Desktop\Workspace\CST-117\primecalculator\primecalculator\primecalculator\bin\Debug\primecalculator.exe.config
+C:\Users\deben\Desktop\Workspace\CST-117\primecalculator\primecalculator\primecalculator\bin\Debug\primecalculator.exe
+C:\Users\deben\Desktop\Workspace\CST-117\primecalculator\primecalculator\primecalculator\bin\Debug\primecalculator.pdb
+C:\Users\deben\Desktop\Workspace\CST-117\primecalculator\primecalculator\primecalculator\obj\Debug\primecalculator.csprojAssemblyReference.cache
+C:\Users\deben\Desktop\Workspace\CST-117\primecalculator\primecalculator\primecalculator\obj\Debug\primecalculator.csproj.CoreCompileInputs.cache
+C:\Users\deben\Desktop\Workspace\CST-117\primecalculator\primecalculator\primecalculator\obj\Debug\primecalculator.exe
+C:\Users\deben\Desktop\Workspace\CST-117\primecalculator\primecalculator\primecalculator\obj\Debug\primecalculator.pdb
