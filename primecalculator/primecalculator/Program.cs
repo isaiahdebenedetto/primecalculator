@@ -9,7 +9,7 @@ namespace primecalculator
     class Program
     {
         static String operand;
-        static string menu;
+        static string input;
         static double result, num1, num2;
         static int k;
 
@@ -17,25 +17,64 @@ namespace primecalculator
         {
             HelpMenu help = new HelpMenu();
             help.PromptMenu();
-
-            Calculator calc = new Calculator();
-            calc.PromptFirstNumber();
-            calc.PromptOperand();
-            calc.PromptSecondNumber();
-            calc.DisplayAnswer();
-            calc.CalculatePrime();
         }
     }
 
     class HelpMenu
     {
+        public Calculator calc;
         private const string help = "/help";
-        public string menu;
+        public string input;
 
-        public string PromptMenu()
+        //constructor
+        public HelpMenu()
+        {
+            //initialize calc object
+            calc = new Calculator();
+        }
+
+        //ask user for help
+        public void PromptMenu()
         {
             Console.WriteLine("type /help for a list of options... ");
+            input = (Console.ReadLine());
+            switch (input)
+            {
+                case "/help":
+                    PromptHelpMenu();
+                    break;
+                default: //recursively prompt menu
+                    PromptMenu();
+                    break;
+            }
+        }
+
+        //ask user for help
+        public void PromptHelpMenu()
+        {
+            Console.WriteLine("1. Calculator\n2. Calculate Prime\n3. Calculate Factorial\n4. Calculate Fibonacci");
             
+            input = (Console.ReadLine());
+            switch (input)
+            {
+                case "1": //call calclator function
+                    calc.PromptFirstNumber();
+                    calc.PromptOperand();
+                    calc.PromptSecondNumber();
+                    calc.DisplayAnswer();
+                    break;
+                case "2": //call prime check function
+                    calc.CalculatePrime();
+                    break;
+                case "3":
+                    calc.CalculateFactorial();
+                    break;
+                case "4":
+                    calc.CalculateFib();
+                    break;
+                default: //recursively prompt menu
+                    PromptMenu();
+                    break;
             }
         }
     }
@@ -123,6 +162,28 @@ namespace primecalculator
             Console.ReadLine();
         }
 
+        public void CalculateFactorial()
+        {
+            Console.WriteLine("Enter a number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            long fact = GetFactorial(number);
+            Console.WriteLine("{0} factorial is {1}", number, fact);
+            Console.ReadKey();
+        }
+
+        private static long GetFactorial(int number)
+        {
+            if (number == 0)
+            {
+                return 1;
+            }
+            return number * GetFactorial(number - 1);
+        }
+
+        public void CalculateFib()
+        {
+            //TODO calculate fibonacci sequence
+        }  
         public void Retry()
         {
             //TODO: prompt to restart program
