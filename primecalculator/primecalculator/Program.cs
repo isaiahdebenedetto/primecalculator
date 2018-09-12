@@ -9,11 +9,15 @@ namespace primecalculator
     class Program
     {
         static String operand;
+        static string menu;
         static double result, num1, num2;
         static int k;
 
         static void Main(string[] args)
         {
+            HelpMenu help = new HelpMenu();
+            help.PromptMenu();
+
             Calculator calc = new Calculator();
             calc.PromptFirstNumber();
             calc.PromptOperand();
@@ -22,7 +26,20 @@ namespace primecalculator
             calc.CalculatePrime();
         }
     }
-    
+
+    class HelpMenu
+    {
+        private const string help = "/help";
+        public string menu;
+
+        public string PromptMenu()
+        {
+            Console.WriteLine("type /help for a list of options... ");
+            
+            }
+        }
+    }
+
     class Calculator
     {
         public string operand;
