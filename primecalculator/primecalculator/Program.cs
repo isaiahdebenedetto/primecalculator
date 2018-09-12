@@ -52,8 +52,8 @@ namespace primecalculator
         //ask user for help
         public void PromptHelpMenu()
         {
-            Console.WriteLine("1. Calculator\n2. Calculate Prime\n3. Calculate Factorial\n4. Calculate Fibonacci");
-            
+            Console.WriteLine("1. Calculator\n2. Calculate Prime\n3. Calculate Factorial"); //add fourth option 4. Calculate Fibonacci
+
             input = (Console.ReadLine());
             switch (input)
             {
