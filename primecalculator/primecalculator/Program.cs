@@ -52,7 +52,7 @@ namespace primecalculator
         //ask user for help
         public void PromptHelpMenu()
         {
-            Console.WriteLine("1. Calculator\n2. Calculate Prime\n3. Calculate Factorial"); //add fourth option 4. Calculate Fibonacci
+            Console.WriteLine("1. Calculator\n2. Calculate Prime\n3. Calculate Factorial\n4. Calculate Fibonacci");
 
             input = (Console.ReadLine());
             switch (input)
@@ -83,7 +83,7 @@ namespace primecalculator
     {
         public string operand;
         public double result, num1, num2;
-        public int k;
+        public int k, len;
 
         public Calculator()
         {
@@ -180,10 +180,20 @@ namespace primecalculator
             return number * GetFactorial(number - 1);
         }
 
-        public void CalculateFib()
+        public static void CalculateFib(int len)
         {
-            //TODO calculate fibonacci sequence
-        }  
+            
+            Fibonacci_Rec_Temp(0, 1, 1, len);
+        }
+
+        private static void Fibonacci_Rec_Temp(int a, int b, int counter, int len)
+        {
+            if (counter <= len)
+            {
+                Console.Write("{0}", a);
+                Fibonacci_Rec_Temp(b, a + b, counter + 1, len);
+            }
+        }
         public void Retry()
         {
             //TODO: prompt to restart program
